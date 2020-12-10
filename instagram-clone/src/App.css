@@ -1,0 +1,17 @@
+*{
+  margin : 0;
+}
+
+.app_logo{
+  height:100px;
+  width:100px;
+  object-fit:contain;
+  background-color: white;
+  padding : 5px;
+  border-bottom: 1px solid lightgray;
+}
+
+.app{
+  background-color: #fafafa;
+  height:100%;
+}
