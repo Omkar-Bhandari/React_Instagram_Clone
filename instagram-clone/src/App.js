@@ -1,8 +1,19 @@
-import React from 'react';
+import React , {useState , useEffect} from 'react';
 import './App.css';
 import Post from './Post';
+import {db} from './firebase';
 
 function App() {
+  const [posts,setPosts] = useState([]);
+  
+  useEffect(() => {
+    db.collection('posts').onSnapshot(snapshot =>{
+      setPosts(snapshot.docs.map(doc => doc.data()));
+    })
+
+  }
+  )
+
   return (
     <div className="App">
       <div className="app_header">
@@ -11,8 +22,13 @@ function App() {
       </div>
 
       <h1>Hello This is Omkar</h1>
-      <Post />
 
+      {
+        posts.map(post =>(
+          <Post username={post.username} caption={post.caption} imageURL={post.imageURL} />
+        ))
+      }
+      
     </div>
   );
 }
