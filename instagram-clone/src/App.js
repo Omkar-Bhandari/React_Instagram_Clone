@@ -1,16 +1,17 @@
 import React from 'react';
 import './App.css';
+import Post from './Post';
 
 function App() {
   return (
     <div className="App">
-      <div className="header">
-        <img className="app_logo" src="https://www.vectorlogo.zone/logos/instagram/instagram-wordmark.svg"
+      <div className="app_header">
+        <img className="app_logo" src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
           alt="Instagram-text-logo"/>
       </div>
 
       <h1>Hello This is Omkar</h1>
-
+      <Post />
 
     </div>
   );
